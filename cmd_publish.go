@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/Songmu/kibelasync/kibela"
+	"github.com/konifar/kibelasync/kibela"
 )
 
 type cmdPublish struct{}

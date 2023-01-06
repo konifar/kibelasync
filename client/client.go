@@ -15,7 +15,7 @@ import (
 
 const (
 	endpointBase  = "https://%s.kibe.la/api/v1"
-	userAgentBase = "Songmu-kibelasync/%s (+https://github.com/Songmu/kibelasync)"
+	userAgentBase = "Songmu-kibelasync/%s (+https://github.com/konifar/kibelasync)"
 )
 
 // Doer is an interface for mocking http client

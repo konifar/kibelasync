@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Songmu/kibelasync/client"
+	"github.com/konifar/kibelasync/client"
 )
 
 type testDoer struct {

@@ -1,6 +1,6 @@
 VERSION = $(shell godzil show-version)
 CURRENT_REVISION = $(shell git rev-parse --short HEAD)
-BUILD_LDFLAGS = "-s -w -X github.com/Songmu/kibelasync.revision=$(CURRENT_REVISION)"
+BUILD_LDFLAGS = "-s -w -X github.com/konifar/kibelasync.revision=$(CURRENT_REVISION)"
 u := $(if $(update),-u)
 
 export GO111MODULE=on

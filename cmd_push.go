@@ -5,7 +5,7 @@ import (
 	"flag"
 	"io"
 
-	"github.com/Songmu/kibelasync/kibela"
+	"github.com/konifar/kibelasync/kibela"
 	"golang.org/x/xerrors"
 )
 

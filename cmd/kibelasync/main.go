@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/Songmu/kibelasync"
+	"github.com/konifar/kibelasync"
 )
 
 func main() {

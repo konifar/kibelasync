@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/Songmu/kibelasync/client"
+	"github.com/konifar/kibelasync/client"
 	"golang.org/x/xerrors"
 )
 
