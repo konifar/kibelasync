@@ -1,4 +1,4 @@
-module github.com/Songmu/kibelasync
+module github.com/konifar/kibelasync
 
 go 1.12
 
