@@ -24,10 +24,14 @@ func getNoteQuery(id ID) string {
     content
     coediting
     folders {
-      after
-      before
-      first
-      last
+      nodes{
+        id
+        fullName
+        group{
+          id
+          name
+        }
+      }
     }
     groups {
       name
@@ -77,35 +81,35 @@ func listNoteQuery(num int, folderID ID, hasLimit bool) string {
 }
 
 /*
-{
-  "data": {
-    "notes": {
-      "edges": [
-        {
-          "node": {
-            "id": "QmxvZy8zNzA",
-            "updatedAt": "2019-06-23T17:39:47.433+09:00"
-          },
-          "cursor": "NA"
-        },
-        {
-          "node": {
-            "id": "QmxvZy8zNzE",
-            "updatedAt": "2019-06-23T17:40:09.969+09:00"
-          },
-          "cursor": "NQ"
-        },
-        {
-          "node": {
-            "id": "QmxvZy8zNjg",
-            "updatedAt": "2019-06-23T17:39:41.751+09:00"
-          },
-          "cursor": "Ng"
-        }
-      ]
-    }
-  }
-}
+	{
+	  "data": {
+	    "notes": {
+	      "edges": [
+	        {
+	          "node": {
+	            "id": "QmxvZy8zNzA",
+	            "updatedAt": "2019-06-23T17:39:47.433+09:00"
+	          },
+	          "cursor": "NA"
+	        },
+	        {
+	          "node": {
+	            "id": "QmxvZy8zNzE",
+	            "updatedAt": "2019-06-23T17:40:09.969+09:00"
+	          },
+	          "cursor": "NQ"
+	        },
+	        {
+	          "node": {
+	            "id": "QmxvZy8zNjg",
+	            "updatedAt": "2019-06-23T17:39:41.751+09:00"
+	          },
+	          "cursor": "Ng"
+	        }
+	      ]
+	    }
+	  }
+	}
 */
 func listNotePaginateQuery(num int, folderID ID, cursor string, hasLimit bool) string {
 	return fmt.Sprintf(`{
