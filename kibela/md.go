@@ -54,10 +54,10 @@ func NewMD(fpath string, r io.Reader, title string, coEdit bool, dir string) (*M
 
 // Meta is a meta information of entry rendered as FrontMatter
 type Meta struct {
-	Title   string         `yaml:"title"`
-	Author  string         `yaml:"author,omitempty"`
-	Groups  []string       `yaml:"groups,flow"`
-	Folders []*FolderInput `yaml:"folders,flow"`
+	Title   string   `yaml:"title"`
+	Author  string   `yaml:"author,omitempty"`
+	Groups  []string `yaml:"groups,flow"`
+	Folders Folders  `yaml:"folders,omitempty"`
 }
 
 func (me *Meta) coediting() bool {

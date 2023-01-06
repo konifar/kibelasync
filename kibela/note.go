@@ -20,15 +20,15 @@ import (
 // Note represents note of Kibela
 type Note struct {
 	ID          `json:"id"`
-	Title       string         `json:"title"`
-	Content     string         `json:"content"`
-	CoEditing   bool           `json:"coediting"`
-	Folders     []*FolderInput `json:"folders"`
-	Groups      []*Group       `json:"groups"`
-	Author      User           `json:"author"`
-	UpdatedAt   Time           `json:"updatedAt"`
-	PublishedAt Time           `json:"publishedAt"`
-	Summary     string         `json:"summary"`
+	Title       string   `json:"title"`
+	Content     string   `json:"content"`
+	CoEditing   bool     `json:"coediting"`
+	Folders     Folders  `json:"folders"`
+	Groups      []*Group `json:"groups"`
+	Author      User     `json:"author"`
+	UpdatedAt   Time     `json:"updatedAt"`
+	PublishedAt Time     `json:"publishedAt"`
+	Summary     string   `json:"summary"`
 }
 
 func (n *Note) toMD(dir string) *MD {

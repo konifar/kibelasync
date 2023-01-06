@@ -19,10 +19,16 @@ func newTestMD() *MD {
 		FrontMatter: &Meta{
 			Title:  "たいとる！",
 			Author: "Songmu",
-			Folders: []*FolderInput{
-				{
-					FolderName: "testtop/testsub1",
-					GroupId:    ID("R3JvdXAvMQ"),
+			Folders: Folders{
+				Nodes: []*Folder{
+					{
+						ID:       "1",
+						FullName: "testtop/testsub1",
+						Group: Group{
+							ID:   ID("R3JvdXAvMQ"),
+							Name: "Public",
+						},
+					},
 				},
 			},
 			Groups: []string{"Public", "Hobby"},
@@ -128,7 +134,13 @@ func TestMD_fullContent(t *testing.T) {
 title: たいとる！
 author: Songmu
 groups: [Public, Hobby]
-folders: [{foldername: testtop/testsub1, groupid: R3JvdXAvMQ}]
+folders:
+  nodes:
+  - id: "1"
+    fullname: testtop/testsub1
+    group:
+      id: R3JvdXAvMQ
+      name: Public
 ---
 
 Hello World!
@@ -254,10 +266,16 @@ func TestKibela_PublishMD(t *testing.T) {
       "note": {
         "id": "%s",
         "updatedAt": "%s",
-        "folders":[{
-          "folderName": "hoge/fuga",
-          "groupId": "R3JvdXAvMQ"
-        }],
+        "folders":{
+          "nodes": [{
+            "id": "1",
+		    "fullName": "hoge/fuga",
+            "group": {
+			  "id": "R3JvdXAvMQ",
+			  "name": "Home"
+			}
+		  }]
+        },
         "groups": [{
           "name": "Home"
         }],
@@ -331,12 +349,16 @@ func TestKibela_PushMD(t *testing.T) {
       "title": "APIテストpublic",
       "content": "コンテント!\nコンテント",
       "coediting": true,
-      "folders": [
-	    {
-          "folderName": "testtop/testsub1",
-          "groupId": "R3JvdXAvMQ"
-        }
-	  ],
+      "folders":{
+        "nodes": [{
+		  "id": "1",
+		  "fullName": "hoge/fuga",
+		  "group": {
+			"id": "R3JvdXAvMQ",
+			"name": "Home"
+		  }
+		}]
+	  },
       "groups": [
         {
           "name": "Home",

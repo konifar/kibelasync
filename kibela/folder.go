@@ -12,6 +12,11 @@ import (
 type Folder struct {
 	ID       `json:"id"`
 	FullName string `json:"fullName"`
+	Group    Group  `json:group`
+}
+
+type Folders struct {
+	Nodes []*Folder `json:"nodes"`
 }
 
 func (ki *Kibela) getFolderCount(ctx context.Context) (int, error) {
@@ -40,9 +45,7 @@ func (ki *Kibela) getFolders(ctx context.Context) ([]*Folder, error) {
 		return nil, xerrors.Errorf("failed to ki.getFolders: %w", err)
 	}
 	var res struct {
-		Folders struct {
-			Nodes []*Folder `json:"nodes"`
-		} `json:"folders"`
+		Folders `json:"folders"`
 	}
 	if err := json.Unmarshal(data, &res); err != nil {
 		return nil, xerrors.Errorf("failed to ki.getFolders: %w", err)
