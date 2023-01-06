@@ -23,7 +23,7 @@ func getNoteQuery(id ID) string {
     title
     content
     coediting
-    folders {
+    folders(first: 1) {
       nodes{
         id
         fullName
